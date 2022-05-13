@@ -48,6 +48,7 @@ function generatePassword() {
       window.alert("Your password will NOT contain special characters.");
     }
   
+  
   //password generator
   for (let i = 0; i < passwordLength; i++) {
     //pick random category thats available
@@ -101,7 +102,6 @@ function lengthChecker() {
         lengthChecker();
       }
 }
-
 
 
 // Get references to the #generate element
