@@ -10,13 +10,15 @@
   //#3
  var specialCharacters = ['!', '"', '#', '$', '%', '&', '*', '+', ',', '-', '.', '/', ':', ';', '<', '>', '=', '?', '@', '^', '_', '`', '|', '~'];
 
+var passwordLength = null;
+
 
 function generatePassword() {
   var finalPassword = "";
- 
+
 //ask user what character types to include and validate input
-  var passwordLength= window.prompt("How many characters would you like your password to have? Passwords can contain 8 to 128 characters.");
-  window.alert("You have requested a password that is " + passwordLength + " characters in length.");
+  passwordLength = window.prompt("How many characters would you like your password to have? Passwords can contain 8 to 128 characters.");
+     lengthChecker();
   var lowercase = window.confirm("Would you like to include lowercase letters?");
     if(lowercase) {
       window.alert("Your password will contain lowercase characters.");
@@ -88,6 +90,18 @@ function generatePassword() {
 
   return finalPassword;
 }
+
+function lengthChecker() {
+   if (passwordLength >= 8 && passwordLength <= 128) {
+        window.alert("You have requested a password that is " + passwordLength + " characters in length.");
+      }
+   else {
+        window.alert("Your entry is invalid. Please enter a number between 8 and 128.");
+        passwordLength = window.prompt("How many characters would you like your password to have? Passwords can contain 8 to 128 characters.");
+        lengthChecker();
+      }
+}
+
 
 
 // Get references to the #generate element
