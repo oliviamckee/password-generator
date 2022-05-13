@@ -6,13 +6,48 @@
  var numberCharacters = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
  var specialCharacters = ['!', '"', '#', '$', '%', '&', '*', '+', ',', '-', '.', '/', ':', ';', '<', '>', '=', '?', '@', '^', '_', '`', '|', '~'];
 
-//question prompts 
+
 function generatePassword() {
   var finalPassword = "";
+ 
+//ask user what character types to include and validate input
+  var passwordLength= window.prompt("How many characters would you like your password to have?");
+  window.alert("You have requested a password that is " + passwordLength + " characters in length.");
   var lowercase = window.confirm("Would you like to include lowercase letters?");
+    if(lowercase) {
+      window.alert("Your password will contain lowercase characters.");
+    }
+    else {
+      window.alert("Your password will NOT contain lowercase characters.");
+    }
   var uppercase = window.confirm("Would you like to include uppercase letters?");
+    if(uppercase) {
+      window.alert("Your password will contain uppercase characters.");
+    }
+    else {
+      window.alert("Your password will NOT contain uppercase characters.");
+    }
   var numbers = window.confirm("Would you like to include numbers?");
+    if(numbers) {
+      window.alert("Your password will contain numbers.");
+    }
+    else {
+      window.alert("Your password will NOT contain numbers.");
+    }
   var special = window.confirm("Would you like to include special characters?");
+    if(special) {
+      window.alert("Your password will contain special characters.");
+    }
+    else {
+      window.alert("Your password will NOT contain special characters.");
+    }
+    
+  for (let i = 0; i < passwordLength; i++) {
+    //pick random category thats available
+
+    
+  }
+
   return finalPassword;
 }
 
