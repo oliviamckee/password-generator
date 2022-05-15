@@ -19,9 +19,12 @@ function generatePassword() {
 //ask user what character types to include and validate input
   passwordLength = window.prompt("How many characters would you like your password to have? Passwords can contain 8 to 128 characters.");
      lengthChecker();
+  var criteria = false; 
+  while (criteria === false) {
   var lowercase = window.confirm("Would you like to include lowercase letters?");
     if(lowercase) {
       window.alert("Your password will contain lowercase characters.");
+      criteria = true;
     }
     else {
       window.alert("Your password will NOT contain lowercase characters.");
@@ -29,6 +32,7 @@ function generatePassword() {
   var uppercase = window.confirm("Would you like to include uppercase letters?");
     if(uppercase) {
       window.alert("Your password will contain uppercase characters.");
+      criteria = true;
     }
     else {
       window.alert("Your password will NOT contain uppercase characters.");
@@ -36,6 +40,7 @@ function generatePassword() {
   var numbers = window.confirm("Would you like to include numbers?");
     if(numbers) {
       window.alert("Your password will contain numbers.");
+      criteria = true;
     }
     else {
       window.alert("Your password will NOT contain numbers.");
@@ -43,11 +48,16 @@ function generatePassword() {
   var special = window.confirm("Would you like to include special characters?");
     if(special) {
       window.alert("Your password will contain special characters.");
+      criteria = true;
     }
     else {
       window.alert("Your password will NOT contain special characters.");
     }
-  
+    while (criteria === false) {
+      window.alert("You need to select at least one criteria. Please try again.")
+      break;
+    }
+  }
   
   //password generator
   for (let i = 0; i < passwordLength; i++) {
